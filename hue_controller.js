@@ -1,9 +1,10 @@
 
 var hue_controller = function() {};
+var user_id = "mfdfLQ6rceWkt0NEedzTChMhASkXD0i6aMXKJIfM";
 
 hue_controller.prototype = {
 
-	bridgeURL: "http://10.0.1.3/api/newdeveloper",
+	bridgeURL: "http://10.0.1.4/api/" + user_id,
 
 	allLightsToggle: function(status) {
 		$.ajax(
@@ -12,7 +13,7 @@ hue_controller.prototype = {
 		    type: "PUT",
 		    data: "{\"on\": " + status + "}"
 		  }
-		  
+
 		).done(function(data) {
 		  console.log(data);
 		});
@@ -25,11 +26,10 @@ hue_controller.prototype = {
 		    type: "PUT",
 		    data: "{\"bri\": " + level + "}"
 		  }
-		  
+
 		).done(function(data) {
 		  //console.log(data);
 		});
-	}	
+	}
 
 }
-
